@@ -9,26 +9,27 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="post" action="/kriteria/insert">
+                        @csrf
                         <div class="box-body">
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Kode Kriteria</label>
                     
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control">
+                                    <input name="kd_kriteria" type="number" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Nama Kriteria</label>
                     
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control">
+                                    <input name="nama_kriteria" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="box-footer">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-default">Batal</button>
+                                <a href="/kriteria" class="btn btn-default">Batal</a>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                         </div>
@@ -53,13 +54,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($dataKriteria as $kriteria)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Kriteria 1</td>
+                                    <td>{{$kriteria->kd_kriteria}}</td>
+                                    <td>{{$kriteria->nama_kriteria}}</td>
                                     <td>
-                                        <a href="#edit">Edit</a> | <a href="#hapus">Hapus</a>
+                                        <a href="kriteria/edit/{{$kriteria->kd_kriteria}}">Edit</a> | <a href="/kriteria/hapus/{{$kriteria->kd_kriteria}}">Hapus</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

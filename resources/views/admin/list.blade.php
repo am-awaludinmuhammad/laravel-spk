@@ -23,17 +23,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Administrator</td>
-                                    <td>Yogyakarta</td>
-                                    <td>08612334</td>
-                                    <td>admin</td>
-                                    <td>admin1</td>
-                                    <td>
-                                        <a href="#edit">Edit</a> | <a href="#hapus">Hapus</a>
-                                    </td>
-                                </tr>
+                                @foreach ($dataAdmin as $admin)
+                                    <tr>
+                                        <td>{{$admin->kd_admin}}</td>
+                                        <td>{{$admin->nama_admin}}</td>
+                                        <td>{{$admin->alamat}}</td>
+                                        <td>{{$admin->no_hp}}</td>
+                                        <td>{{$admin->username}}</td>
+                                        <td>{{$admin->password}}</td>
+                                        <td>
+                                            <a href="/admin/edit/{{$admin->kd_admin}}">Edit</a> | <a href="/admin/hapus/{{$admin->kd_admin}}">Hapus</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
