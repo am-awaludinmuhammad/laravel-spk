@@ -50,9 +50,7 @@ class DashboardController extends Controller
 
     public function updateAdmin($kdAdmin, Request $request)
     {
-        $dataAdmin = DB::table('admin')
-        ->where('kd_admin', $kdAdmin)
-        ->update([
+        DB::table('admin')->where('kd_admin', $kdAdmin)->update([
             'kd_admin' => $request->kd_admin,
             'nama_admin' => $request->nama_admin,
             'no_hp' => $request->no_hp,
@@ -66,10 +64,7 @@ class DashboardController extends Controller
 
     public function hapusAdmin($kdAdmin)
     {
-        $dataAdmin = DB::table('admin')
-        ->where('kd_admin', $kdAdmin)
-        ->delete();
-
+        DB::table('admin')->where('kd_admin', $kdAdmin)->delete();
         return redirect('/admin');
     }
 
@@ -115,7 +110,7 @@ class DashboardController extends Controller
 
     public function hapusFasilitas($kdFasilitas)
     {
-        $fasilitas = DB::table('fasilitas')->where('kd_fasilitas', $kdFasilitas)->delete();
+        DB::table('fasilitas')->where('kd_fasilitas', $kdFasilitas)->delete();
         return redirect('/fasilitas');
     }
 
@@ -154,7 +149,7 @@ class DashboardController extends Controller
 
     public function updateKriteria($kdKriteria, Request $request)
     {
-        $dataKriteria = DB::table('kriteria')->where('kd_kriteria', $kdKriteria)->update([
+        DB::table('kriteria')->where('kd_kriteria', $kdKriteria)->update([
             'kd_kriteria' => $request->kd_kriteria,
             'nama_kriteria' => $request->nama_kriteria
         ]);
@@ -163,7 +158,7 @@ class DashboardController extends Controller
 
     public function hapusKriteria($kdKriteria)
     {
-        $dataKriteria = DB::table('kriteria')->where('kd_kriteria', $kdKriteria)->delete();
+        DB::table('kriteria')->where('kd_kriteria', $kdKriteria)->delete();
         return redirect('/kriteria');
     }
 }
