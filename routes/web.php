@@ -38,6 +38,11 @@ Route::post('fasilitas/update/{kd_fasilitas}', [DashboardController::class, 'upd
 Route::get('fasilitas/hapus/{kd_fasilitas}', [DashboardController::class, 'hapusFasilitas']);
 
 Route::get('menu', [DashboardController::class, 'menu']);
+Route::post('menu/insert', [DashboardController::class, 'insertMenu']);
+Route::get('menu/edit/{kd_menu}', [DashboardController::class, 'editMenu']);
+Route::post('menu/update/{kd_menu}', [DashboardController::class, 'updateMenu']);
+Route::get('menu/hapus/{kd_menu}', [DashboardController::class, 'hapusMenu']);
+
 Route::get('bobot', [DashboardController::class, 'bobot']);
 
 Route::get('kriteria', [DashboardController::class, 'kriteria']);

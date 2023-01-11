@@ -116,7 +116,40 @@ class DashboardController extends Controller
 
     public function menu()
     {
-        return view('menu');
+        $dataMenu = DB::table('menu')->get();
+        return view('menu', compact('dataMenu'));
+    }
+
+    public function insertMenu(Request $request)
+    {
+        DB::table('menu')->insert([
+            'kd_menu' => $request->kd_menu,
+            'nama_menu' => $request->nama_menu,
+            'harga' => $request->harga,
+        ]);
+        return redirect('/menu');
+    }
+
+    public function editMenu($kdMenu)
+    {
+        $menu = DB::table('menu')->where('kd_menu', $kdMenu)->first();
+        return view('menu-edit', compact('menu'));
+    }
+
+    public function updateMenu($kdMenu, Request $request)
+    {
+        DB::table('menu')->where('kd_menu', $kdMenu)->update([
+            'kd_menu' => $request->kd_menu,
+            'nama_menu' => $request->nama_menu,
+            'harga' => $request->harga,
+        ]);
+        return redirect('/menu');
+    }
+
+    public function hapusMenu($kdMenu)
+    {
+        DB::table('menu')->where('kd_menu', $kdMenu)->delete();
+        return redirect('/menu');
     }
 
     public function bobot()
