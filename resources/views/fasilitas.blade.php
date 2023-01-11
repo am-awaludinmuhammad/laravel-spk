@@ -9,26 +9,27 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="post" action="/fasilitas/insert">
+                        @csrf
                         <div class="box-body">
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Kode Fasilitas</label>
                     
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control">
+                                    <input name="kd_fasilitas" type="number" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Nama Fasilitas</label>
                     
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control">
+                                    <input name="nama_fasilitas" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="box-footer">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-default">Batal</button>
+                                <a href="/fasilitas" class="btn btn-default">Batal</a>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                         </div>
@@ -53,13 +54,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Fasilitas 1</td>
-                                    <td>
-                                        <a href="#edit">Edit</a> | <a href="#hapus">Hapus</a>
-                                    </td>
-                                </tr>
+                                @foreach ($dataFasilitas as $fasilitas)
+                                    <tr>
+                                        <td>{{$fasilitas->kd_fasilitas}}</td>
+                                        <td>{{$fasilitas->nama_fasilitas}}</td>
+                                        <td>
+                                            <a href="/fasilitas/edit/{{$fasilitas->kd_fasilitas}}">Edit</a> | <a href="/fasilitas/hapus/{{$fasilitas->kd_fasilitas}}">Hapus</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

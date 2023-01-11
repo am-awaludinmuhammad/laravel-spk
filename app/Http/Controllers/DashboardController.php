@@ -85,7 +85,38 @@ class DashboardController extends Controller
 
     public function fasilitas()
     {
-        return view('fasilitas');
+        $dataFasilitas = DB::table('fasilitas')->get();
+        return view('fasilitas', compact('dataFasilitas'));
+    }
+    
+    public function insertFasilitas(Request $request)
+    {
+        DB::table('fasilitas')->insert([
+            'kd_fasilitas' => $request->kd_fasilitas,
+            'nama_fasilitas' => $request->nama_fasilitas
+        ]);
+        return redirect('/fasilitas');
+    }
+
+    public function editFasilitas($kdFasilitas)
+    {
+        $fasilitas = DB::table('fasilitas')->where('kd_fasilitas', $kdFasilitas)->first();
+        return view('fasilitas-edit', compact('fasilitas'));
+    }
+
+    public function updateFasilitas($kdFasilitas, Request $request)
+    {
+        DB::table('fasilitas')->where('kd_fasilitas', $kdFasilitas)->update([
+            'kd_fasilitas' => $request->kd_fasilitas,
+            'nama_fasilitas' => $request->nama_fasilitas
+        ]);
+        return redirect('/fasilitas');
+    }
+
+    public function hapusFasilitas($kdFasilitas)
+    {
+        $fasilitas = DB::table('fasilitas')->where('kd_fasilitas', $kdFasilitas)->delete();
+        return redirect('/fasilitas');
     }
 
     public function menu()
