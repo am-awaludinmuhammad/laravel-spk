@@ -16,34 +16,30 @@
                                     <th>Kode</th>
                                     <th>Nama</th>
                                     <th>No.Hp</th>
-                                    <th>Lokasi</th>
                                     <th>Alamat</th>
                                     <th>Foto 1</th>
                                     <th>Foto 2</th>
-                                    <th>Menu</th>
-                                    <th>Fasilitas</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Warung 1</td>
-                                    <td>08612334</td>
-                                    <td>Yogyakarta</td>
-                                    <td>Yogyakarta</td>
-                                    <td>
-                                        <img src="{{ asset('img/photo2.png') }}" alt="" style="width: 80px;">
-                                    </td>
-                                    <td>
-                                        <img src="{{ asset('img/photo2.png') }}" alt="" style="width: 80px;">
-                                    </td>
-                                    <td>Menu 1</td>
-                                    <td>Fasilitas</td>
-                                    <td>
-                                        <a href="#edit">Edit</a> | <a href="#hapus">Hapus</a>
-                                    </td>
-                                </tr>
+                                @foreach($dataWarung as $warung)
+                                    <tr>
+                                        <td>{{$warung->kd_warung}}</td>
+                                        <td>{{$warung->nama_warung}}</td>
+                                        <td>{{$warung->no_hp}}</td>
+                                        <td>{{$warung->alamat}}</td>
+                                        <td>
+                                            <img src="{{ asset('img/upload') }}/{{$warung->foto_1}}" alt="" style="width: 80px;">
+                                        </td>
+                                        <td>
+                                            <img src="{{ asset('img/upload') }}/{{$warung->foto_2}}" alt="" style="width: 80px;">
+                                        </td>
+                                        <td>
+                                            <a href="/warung-makan/edit/{{$warung->kd_warung}}">Edit</a> | <a href="/warung-makan/detail/{{$warung->kd_warung}}">Detail</a> | <a href="/warung-makan/hapus/{{$warung->kd_warung}}">Hapus</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

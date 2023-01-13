@@ -30,6 +30,11 @@ Route::get('admin/hapus/{kd_admin}', [DashboardController::class, 'hapusAdmin'])
 
 Route::get('warung-makan', [DashboardController::class, 'warungMakan']);
 Route::get('warung-makan/tambah', [DashboardController::class, 'tambahWarungMakan']);
+Route::post('warung-makan/insert', [DashboardController::class, 'insertWarungMakan']);
+Route::get('warung-makan/edit/{kd_warung}', [DashboardController::class, 'editWarungMakan']);
+Route::post('warung-makan/update/{kd_warung}', [DashboardController::class, 'updateWarungMakan']);
+Route::get('warung-makan/detail/{kd_warung}', [DashboardController::class, 'detailWarungMakan']);
+Route::get('warung-makan/hapus/{kd_warung}', [DashboardController::class, 'hapusWarungMakan']);
 
 Route::get('fasilitas', [DashboardController::class, 'fasilitas']);
 Route::post('fasilitas/insert', [DashboardController::class, 'insertFasilitas']);

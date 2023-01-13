@@ -4,9 +4,9 @@
     <section class="content">
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Tambah Data Warung Makan</h3>
+                <h3 class="box-title">Edit Data Warung Makan</h3>
             </div>
-            <form class="form-horizontal" action="/warung-makan/insert" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" action="/warung-makan/update/{{$warung->kd_warung}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="box-body">
                     <div class="row">
@@ -15,19 +15,19 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Kode Rumah Makan</label>
                                 <div class="col-sm-8">
-                                    <input name="kd_warung" type="text" class="form-control">
+                                    <input name="kd_warung" value="{{$warung->kd_warung}}" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Nama Rumah Makan</label>
                                 <div class="col-sm-8">
-                                    <input name="nama_warung" type="text" class="form-control">
+                                    <input name="nama_warung" value="{{$warung->nama_warung}}" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Alamat</label>
                                 <div class="col-sm-8">
-                                    <textarea name="alamat" class="form-control" rows="3"></textarea>
+                                    <textarea name="alamat" class="form-control" rows="3">{{$warung->alamat}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -44,33 +44,22 @@
                                     <p class="help-block">File Gambar (.png, .jpg), max: 2MB</p>
                                 </div>
                             </div>
-                            {{--<div class="form-group">
-                                <label class="col-sm-4 control-label">Lokasi</label>
-                                <div class="col-sm-8">
-                                    <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control">
-                                            <span class="input-group-btn">
-                                                <button type="button" class="btn btn-info btn-flat">Map</button>
-                                            </span>
-                                    </div>
-                                </div>
-                            </div>--}}
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">No Handphone</label>
                                 <div class="col-sm-8">
-                                    <input name="no_hp" type="number" class="form-control">
+                                    <input name="no_hp" value="{{$warung->no_hp}}" type="number" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Latitude</label>
                                 <div class="col-sm-8">
-                                    <input name="latitude" type="text" class="form-control">
+                                    <input name="latitude" value="{{$warung->latitude}}" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Longitude</label>
                                 <div class="col-sm-8">
-                                    <input name="longitude" type="text" class="form-control">
+                                    <input name="longitude" value="{{$warung->longitude}}" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
