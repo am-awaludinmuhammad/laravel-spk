@@ -156,6 +156,62 @@ class DashboardController extends Controller
         return redirect('/warung-makan');
     }
 
+    public function listWarungMenu($kdWarung)
+    {
+        $listMenu = DB::table('menu')->get();
+        $listKategori = DB::table('kategori_menu')->get();
+        $warung = DB::table('warung_bakso')->where('kd_warung', $kdWarung)->first();
+        $menuWarung = DB::table('menu_warung')
+            ->select('menu_warung.*', 'menu.nama_menu', 'kategori_menu.nama_kategori')
+            ->join('menu', 'menu_warung.kd_menu', '=', 'menu.kd_menu')
+            ->join('kategori_menu', 'menu_warung.kd_kategori', '=', 'kategori_menu.kd_kategori')
+            ->where('kd_warung', $kdWarung)
+            ->get();
+
+        return view('warung.list-menu', compact('listMenu', 'warung', 'listKategori', 'menuWarung'));
+    }
+
+    public function insertWarungMenu($kdWarung, Request $request)
+    {
+        // insert ke tabel menu_warung
+        DB::table('menu_warung')->insert([
+            'kd_warung' => $kdWarung,
+            'kd_menu' => $request->kd_menu,
+            'kd_kategori' => $request->kd_kategori,
+            'harga' => $request->harga,
+
+        ]);
+        return redirect('warung-makan/'.$kdWarung.'/menu');
+    }
+
+    public function editWarungMenu($kdWarung, $id)
+    {
+        $menuWarung = DB::table('menu_warung')->where('id', $id)->first();
+        $warung = DB::table('warung_bakso')->where('kd_warung', $kdWarung)->first();
+        $listKategori = DB::table('kategori_menu')->get();
+        $listMenu = DB::table('menu')->get();
+
+        return view('warung.edit-menu', compact('menuWarung', 'warung', 'listKategori', 'listMenu'));
+    }
+
+    public function updateWarungMenu($kdWarung, $id, Request $request)
+    {
+        // update data
+        DB::table('menu_warung')->where('id', $id)->update([
+            'kd_menu' => $request->kd_menu,
+            'kd_kategori' => $request->kd_kategori,
+            'harga' => $request->harga,
+        ]);
+
+        return redirect('warung-makan/'.$kdWarung.'/menu');
+    }
+
+    public function hapusWarungMenu($kdWarung, $id)
+    {
+        DB::table('menu_warung')->where('id', $id)->delete();
+        return redirect('warung-makan/'.$kdWarung.'/menu');
+    }
+
     public function fasilitas()
     {
         $dataFasilitas = DB::table('fasilitas')->get();

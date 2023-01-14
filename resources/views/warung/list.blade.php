@@ -36,7 +36,9 @@
                                             <img src="{{ asset('img/upload') }}/{{$warung->foto_2}}" alt="" style="width: 80px;">
                                         </td>
                                         <td>
-                                            <a href="/warung-makan/edit/{{$warung->kd_warung}}">Edit</a> | <a href="/warung-makan/detail/{{$warung->kd_warung}}">Detail</a> | <a href="/warung-makan/hapus/{{$warung->kd_warung}}">Hapus</a>
+                                            <a href="/warung-makan/edit/{{$warung->kd_warung}}">Edit</a> | 
+                                            <a href="/warung-makan/{{$warung->kd_warung}}/menu">Olah Menu</a> | 
+                                            <a href="/warung-makan/hapus/{{$warung->kd_warung}}">Hapus</a>
                                         </td>
                                     </tr>
                                 @endforeach
