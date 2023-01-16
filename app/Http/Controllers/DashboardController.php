@@ -212,6 +212,53 @@ class DashboardController extends Controller
         return redirect('warung-makan/'.$kdWarung.'/menu');
     }
 
+    public function fasilitasWarung($kdWarung)
+    {
+        $masterFasilitas = DB::table('fasilitas')->get();
+        $warung = DB::table('warung_bakso')->where('kd_warung', $kdWarung)->first();
+        $dataFasilitasWarung = DB::table('fasilitas_warung')
+            ->select('fasilitas_warung.*', 'fasilitas.nama_fasilitas')
+            ->join('fasilitas', 'fasilitas_warung.kd_fasilitas', '=', 'fasilitas.kd_fasilitas')
+            ->where('fasilitas_warung.kd_warung', $kdWarung)
+            ->get();
+        
+        return view('warung.list-fasilitas', compact('masterFasilitas', 'dataFasilitasWarung', 'warung'));
+    }
+
+    public function insertFasilitasWarung($kdWarung, Request $request)
+    {
+        DB::table('fasilitas_warung')->insert([
+            'kd_warung' => $kdWarung,
+            'kd_fasilitas' => $request->kd_fasilitas
+        ]);
+
+        return redirect('warung-makan/'.$kdWarung.'/fasilitas');
+    }
+
+    public function editFasilitasWarung($kdWarung, $id)
+    {
+        $warung = DB::table('warung_bakso')->where('kd_warung', $kdWarung)->first();
+        $dataFasilitasWarung = DB::table('fasilitas_warung')->where('id', $id)->first();
+        $masterFasilitas = DB::table('fasilitas')->get();
+
+        return view('warung.edit-fasilitas', compact('warung', 'masterFasilitas', 'dataFasilitasWarung'));
+    }
+
+    public function updateFasilitasWarung($kdWarung, $id, Request $request)
+    {
+        DB::table('fasilitas_warung')->where('id', $id)->update([
+            'kd_fasilitas' => $request->kd_fasilitas
+        ]);
+
+        return redirect('warung-makan/'.$kdWarung.'/fasilitas');
+    }
+
+    public function hapusFasilitasWarung($kdWarung, $id)
+    {
+        DB::table('fasilitas_warung')->where('id', $id)->delete();
+        return redirect('warung-makan/'.$kdWarung.'/fasilitas');
+    }
+
     public function fasilitas()
     {
         $dataFasilitas = DB::table('fasilitas')->get();

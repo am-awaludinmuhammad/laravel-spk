@@ -26,13 +26,6 @@
                                     <input name="nama_menu" value="{{ $menu->nama_menu }}" type="text" class="form-control">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Harga</label>
-                    
-                                <div class="col-sm-8">
-                                    <input name="harga" value="{{ $menu->harga }}" type="text" class="form-control">
-                                </div>
-                            </div>
                         </div>
                         <div class="box-footer">
                             <div class="pull-right">

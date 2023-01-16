@@ -35,11 +35,18 @@ Route::get('warung-makan/edit/{kd_warung}', [DashboardController::class, 'editWa
 Route::post('warung-makan/update/{kd_warung}', [DashboardController::class, 'updateWarungMakan']);
 Route::get('warung-makan/detail/{kd_warung}', [DashboardController::class, 'detailWarungMakan']);
 Route::get('warung-makan/hapus/{kd_warung}', [DashboardController::class, 'hapusWarungMakan']);
+
 Route::get('warung-makan/{kd_warung}/menu', [DashboardController::class, 'listWarungMenu']);
 Route::post('warung-makan/{kd_warung}/menu/insert', [DashboardController::class, 'insertWarungMenu']);
 Route::get('/warung-makan/{kd_warung}/menu/hapus/{id}', [DashboardController::class, 'hapusWarungMenu']);
 Route::get('/warung-makan/{kd_warung}/menu/edit/{id}', [DashboardController::class, 'editWarungMenu']);
 Route::post('/warung-makan/{kd_warung}/menu/update/{id}', [DashboardController::class, 'updateWarungMenu']);
+
+Route::get('/warung-makan/{kd_warung}/fasilitas', [DashboardController::class, 'fasilitasWarung']);
+Route::post('/warung-makan/{kd_warung}/fasilitas/insert', [DashboardController::class, 'insertFasilitasWarung']);
+Route::get('/warung-makan/{kd_warung}/fasilitas/edit/{id}', [DashboardController::class, 'editFasilitasWarung']);
+Route::post('/warung-makan/{kd_warung}/fasilitas/update/{id}', [DashboardController::class, 'updateFasilitasWarung']);
+Route::get('/warung-makan/{kd_warung}/fasilitas/hapus/{id}', [DashboardController::class, 'hapusFasilitasWarung']);
 
 Route::get('fasilitas', [DashboardController::class, 'fasilitas']);
 Route::post('fasilitas/insert', [DashboardController::class, 'insertFasilitas']);

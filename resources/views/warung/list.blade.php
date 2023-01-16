@@ -38,6 +38,7 @@
                                         <td>
                                             <a href="/warung-makan/edit/{{$warung->kd_warung}}">Edit</a> | 
                                             <a href="/warung-makan/{{$warung->kd_warung}}/menu">Olah Menu</a> | 
+                                            <a href="/warung-makan/{{$warung->kd_warung}}/fasilitas">Olah Fasilitas</a> | 
                                             <a href="/warung-makan/hapus/{{$warung->kd_warung}}">Hapus</a>
                                         </td>
                                     </tr>
