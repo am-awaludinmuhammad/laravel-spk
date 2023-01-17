@@ -50,7 +50,7 @@
                             <img src="{{ asset('img/user1-128x128.jpg') }}" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info" style="margin-top: 1rem;">
-                            <p>Administrator</p>
+                            <p>{{ auth()->user()->nama_admin }}</p>
                         </div>
                     </div>
                     <ul class="sidebar-menu" data-widget="tree">
@@ -123,7 +123,10 @@
                             <a href="/kriteria"></i><span>Olah Data Kriteria</span></a>
                         </li>
                         <li>
-                            <button class="btn btn-danger" style="margin-top:20px; margin-left:12px; width:90%">Logout</button>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger" style="margin-top:20px; margin-left:12px; width:90%">Logout</button>
+                            </form>
                         </li>
                     </ul>
                 </section>

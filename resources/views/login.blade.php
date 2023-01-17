@@ -30,16 +30,17 @@
                 <h4>SISTEM PENDUKUNG KEPUTUSAN PEMILIHAN WARUNG BAKSO DI YOGYAKARTA</h4>
                 <br>
                 <div class="col-md-4" style="float:none; margin:0vh auto;">
-                    <form class="form-horizontal" action="/beranda">
+                    <form class="form-horizontal" action="/login" method="post">
+                        @csrf
                         <div class="box-body">
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control" placeholder="Username">
+                                    <input type="text" name="username" class="form-control" placeholder="Username">
                                 </div>
                             </div>
                             <div class="form-group">                        
                                 <div class="col-sm-12">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                             </div>
                         </div>

@@ -4,12 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DashboardController extends Controller
 {
     public function formLogin()
     {
         return view('login');
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = [
+            'username' => $request->username, 
+            'password' => $request->password
+        ];
+
+        if (auth()->attempt($credentials)) {
+            return redirect('/beranda');
+        };
+
+        return redirect('/login');
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        auth()->logout();
+
+        return redirect('/login');
     }
 
     public function beranda()
@@ -36,7 +59,7 @@ class DashboardController extends Controller
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat,
             'username' => $request->username,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
         ]);
 
         return redirect('/admin');
