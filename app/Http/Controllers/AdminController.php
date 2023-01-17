@@ -93,9 +93,15 @@ class AdminController extends Controller
             'nama_admin' => $request->nama_admin,
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat,
-            'username' => $request->username,
-            'password' => $request->password,
+            'username' => $request->username
         ]);
+
+        // update password jika diisi
+        if ($request->password) {
+            DB::table('admin')->where('kd_admin', $kdAdmin)->update([
+                'password' => Hash::make($request->password),
+            ]);
+        }
 
         // alihkan halaman ke halaman admin
         return redirect('/admin');

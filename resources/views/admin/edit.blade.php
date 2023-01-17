@@ -44,7 +44,8 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input value="{{$dataAdmin->password}}" name="password" type="text" class="form-control">
+                                    <input name="password" type="text" class="form-control">
+                                    <p class="help-block">Isikan untuk merubah password</p>
                                 </div>
                             </div>
                         </div>

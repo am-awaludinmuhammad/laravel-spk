@@ -18,7 +18,6 @@
                                     <th>Alamat</th>
                                     <th>No_Telp</th>
                                     <th>Username</th>
-                                    <th>Password</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -30,7 +29,6 @@
                                         <td>{{$admin->alamat}}</td>
                                         <td>{{$admin->no_hp}}</td>
                                         <td>{{$admin->username}}</td>
-                                        <td>{{$admin->password}}</td>
                                         <td>
                                             <a href="/admin/edit/{{$admin->kd_admin}}">Edit</a> | <a href="/admin/hapus/{{$admin->kd_admin}}">Hapus</a>
                                         </td>
