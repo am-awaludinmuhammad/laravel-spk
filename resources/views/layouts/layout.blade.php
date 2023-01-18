@@ -23,6 +23,8 @@
     <!-- Google Font -->
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    @stack('styles')
   </head>
 
     <body class="hold-transition skin-blue sidebar-mini">
@@ -151,18 +153,20 @@
 
         <script>
             $(function () {
-              $('.datatable').DataTable({
-                'paging'      : true,
-                'lengthChange': false,
-                'searching'   : true,
-                'ordering'    : false,
-                'info'        : false,
-                'autoWidth'   : false,
-                "oLanguage": {
-                    "sSearch": "Cari"
-                }
-              })
+                $('.datatable').DataTable({
+                    'paging'      : true,
+                    'lengthChange': false,
+                    'searching'   : true,
+                    'ordering'    : false,
+                    'info'        : false,
+                    'autoWidth'   : false,
+                    "oLanguage": {
+                        "sSearch": "Cari"
+                    }
+                })
             })
-          </script>
+        </script>
+        
+        @stack('scripts')
     </body>
 </html>
