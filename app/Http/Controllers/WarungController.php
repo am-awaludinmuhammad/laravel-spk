@@ -38,12 +38,12 @@ class WarungController extends Controller
 
         // insert data ke table warung_bakso
         DB::table('warung_bakso')->insert([
-            'kd_warung' => $request->kd_warung,
             'nama_warung' => $request->nama_warung,
             'foto_1' => $namaFoto1,
             'foto_2' => $namaFoto2,
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat,
+            'kenyamanan' => $request->kenyamanan,
             'latitude' => $request->latitude,
             'longitude' => $request->longitude,
         ]);
@@ -62,10 +62,10 @@ class WarungController extends Controller
     public function updateWarungMakan($kdWarung, Request $request) {
         // update data warung bakso
         DB::table('warung_bakso')->where('kd_warung', $kdWarung)->update([
-            'kd_warung' => $request->kd_warung,
             'nama_warung' => $request->nama_warung,
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat,
+            'kenyamanan' => $request->kenyamanan,
             'latitude' => $request->latitude,
             'longitude' => $request->longitude,
         ]);

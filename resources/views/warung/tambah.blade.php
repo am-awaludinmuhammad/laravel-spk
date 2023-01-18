@@ -13,34 +13,28 @@
                         {{-- kolom kiri --}}
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">Kode Rumah Makan</label>
-                                <div class="col-sm-8">
-                                    <input name="kd_warung" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="col-sm-4 control-label">Nama Rumah Makan</label>
                                 <div class="col-sm-8">
-                                    <input name="nama_warung" type="text" class="form-control">
+                                    <input required name="nama_warung" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Alamat</label>
                                 <div class="col-sm-8">
-                                    <textarea name="alamat" class="form-control" rows="3"></textarea>
+                                    <textarea required name="alamat" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Foto 1</label>
                                 <div class="col-sm-8">
-                                    <input name="foto_1" type="file">
+                                    <input required name="foto_1" type="file">
                                     <p class="help-block">File Gambar (.png, .jpg), max: 2MB</p>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Foto 2</label>
                                 <div class="col-sm-8">
-                                    <input name="foto_2" type="file">
+                                    <input required name="foto_2" type="file">
                                     <p class="help-block">File Gambar (.png, .jpg), max: 2MB</p>
                                 </div>
                             </div>
@@ -62,65 +56,31 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-sm-4 control-label">Tingkat Kenyamanan</label>
+                                <div class="col-sm-8">
+                                    <select required name="kenyamanan" required class="form-control">
+                                        <option value="">Pilih</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-sm-4 control-label">Latitude</label>
                                 <div class="col-sm-8">
-                                    <input name="latitude" type="text" class="form-control">
+                                    <input required name="latitude" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Longitude</label>
                                 <div class="col-sm-8">
-                                    <input name="longitude" type="text" class="form-control">
+                                    <input required name="longitude" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
-
-                        {{-- kolom kanan 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Kategori Menu</label>
-                                <div class="col-sm-8">
-                                    <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Nama Menu</label>
-                                <div class="col-sm-8">
-                                    <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Harga</label>
-                                <div class="col-sm-8">
-                                    <input type="number" class="form-control">
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label class="col-sm-4 control-label">Fasilitas</label>
-                                <div class="col-sm-8">
-                                    <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        --}}
                     </div> 
                 </div>
                 <div class="box-footer">

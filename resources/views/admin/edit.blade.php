@@ -12,33 +12,27 @@
                         @csrf
                         <div class="box-body">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">Kode Admin</label>
-                                <div class="col-sm-8">
-                                    <input value="{{$dataAdmin->kd_admin}}" name="kd_admin" type="number" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="col-sm-4 control-label">Nama Admin</label>
                                 <div class="col-sm-8">
-                                    <input value="{{$dataAdmin->nama_admin}}" name="nama_admin" type="text" class="form-control">
+                                    <input required value="{{$dataAdmin->nama_admin}}" name="nama_admin" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Nomor Handphone</label>
                                 <div class="col-sm-8">
-                                    <input value="{{$dataAdmin->no_hp}}" name="no_hp" type="number" class="form-control">
+                                    <input required value="{{$dataAdmin->no_hp}}" name="no_hp" type="number" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Alamat</label>
                                 <div class="col-sm-8">
-                                    <textarea name="alamat" class="form-control" rows="3">{{$dataAdmin->alamat}}</textarea>
+                                    <textarea required name="alamat" class="form-control" rows="3">{{$dataAdmin->alamat}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Username</label>
                                 <div class="col-sm-8">
-                                    <input value="{{$dataAdmin->username}}" name="username" type="text" class="form-control">
+                                    <input required value="{{$dataAdmin->username}}" name="username" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">

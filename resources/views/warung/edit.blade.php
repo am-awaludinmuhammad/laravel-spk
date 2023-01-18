@@ -13,21 +13,15 @@
                         {{-- kolom kiri --}}
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">Kode Rumah Makan</label>
-                                <div class="col-sm-8">
-                                    <input name="kd_warung" value="{{$warung->kd_warung}}" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="col-sm-4 control-label">Nama Rumah Makan</label>
                                 <div class="col-sm-8">
-                                    <input name="nama_warung" value="{{$warung->nama_warung}}" type="text" class="form-control">
+                                    <input required name="nama_warung" value="{{$warung->nama_warung}}" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Alamat</label>
                                 <div class="col-sm-8">
-                                    <textarea name="alamat" class="form-control" rows="3">{{$warung->alamat}}</textarea>
+                                    <textarea required name="alamat" class="form-control" rows="3">{{$warung->alamat}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -47,69 +41,35 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">No Handphone</label>
                                 <div class="col-sm-8">
-                                    <input name="no_hp" value="{{$warung->no_hp}}" type="number" class="form-control">
+                                    <input required name="no_hp" value="{{$warung->no_hp}}" type="number" class="form-control">
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label class="col-sm-4 control-label">Tingkat Kenyamanan</label>
+                                <div class="col-sm-8">
+                                    <select required name="kenyamanan" required class="form-control">
+                                        <option disabled value="">Pilih</option>
+                                        <option {{$warung->kenyamanan == 1 ? 'selected' : ''}} value="1">1</option>
+                                        <option {{$warung->kenyamanan == 2 ? 'selected' : ''}} value="2">2</option>
+                                        <option {{$warung->kenyamanan == 3 ? 'selected' : ''}} value="3">3</option>
+                                        <option {{$warung->kenyamanan == 4 ? 'selected' : ''}} value="4">4</option>
+                                        <option {{$warung->kenyamanan == 5 ? 'selected' : ''}} value="5">5</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Latitude</label>
                                 <div class="col-sm-8">
-                                    <input name="latitude" value="{{$warung->latitude}}" type="text" class="form-control">
+                                    <input required name="latitude" value="{{$warung->latitude}}" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">Longitude</label>
                                 <div class="col-sm-8">
-                                    <input name="longitude" value="{{$warung->longitude}}" type="text" class="form-control">
+                                    <input required name="longitude" value="{{$warung->longitude}}" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
-
-                        {{-- kolom kanan 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Kategori Menu</label>
-                                <div class="col-sm-8">
-                                    <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Nama Menu</label>
-                                <div class="col-sm-8">
-                                    <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">Harga</label>
-                                <div class="col-sm-8">
-                                    <input type="number" class="form-control">
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label class="col-sm-4 control-label">Fasilitas</label>
-                                <div class="col-sm-8">
-                                    <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        --}}
                     </div> 
                 </div>
                 <div class="box-footer">

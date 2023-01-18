@@ -19,9 +19,7 @@ class MenuController extends Controller
     {
         // insert data ke table menu
         DB::table('menu')->insert([
-            'kd_menu' => $request->kd_menu,
             'nama_menu' => $request->nama_menu,
-            'harga' => $request->harga,
         ]);
         // alihkan halaman ke halaman menu
         return redirect('/menu');
@@ -39,9 +37,7 @@ class MenuController extends Controller
     {
         // update data menu
         DB::table('menu')->where('kd_menu', $kdMenu)->update([
-            'kd_menu' => $request->kd_menu,
             'nama_menu' => $request->nama_menu,
-            'harga' => $request->harga,
         ]);
         // alihkan halaman ke halaman menu
         return redirect('/menu');

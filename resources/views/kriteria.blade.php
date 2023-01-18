@@ -13,17 +13,10 @@
                         @csrf
                         <div class="box-body">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">Kode Kriteria</label>
-                    
-                                <div class="col-sm-8">
-                                    <input name="kd_kriteria" type="number" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="col-sm-4 control-label">Nama Kriteria</label>
                     
                                 <div class="col-sm-8">
-                                    <input name="nama_kriteria" type="text" class="form-control">
+                                    <input required name="nama_kriteria" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>

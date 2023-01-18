@@ -19,7 +19,6 @@ class KriteriaController extends Controller
     {
         // insert ke tabel kriteria
         DB::table('kriteria')->insert([
-            'kd_kriteria' => $request->kd_kriteria,
             'nama_kriteria' => $request->nama_kriteria
         ]);
         // alihkan halaman ke halaman kriteria
@@ -38,7 +37,6 @@ class KriteriaController extends Controller
     {
         // update data kriteria
         DB::table('kriteria')->where('kd_kriteria', $kdKriteria)->update([
-            'kd_kriteria' => $request->kd_kriteria,
             'nama_kriteria' => $request->nama_kriteria
         ]);
         // alihkan halaman ke halaman kriteria

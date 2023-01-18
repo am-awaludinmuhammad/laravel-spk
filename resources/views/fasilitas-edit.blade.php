@@ -13,17 +13,10 @@
                         @csrf
                         <div class="box-body">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">Kode Fasilitas</label>
-                    
-                                <div class="col-sm-8">
-                                    <input name="kd_fasilitas" value="{{ $fasilitas->kd_fasilitas }}" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="col-sm-4 control-label">Nama Fasilitas</label>
                     
                                 <div class="col-sm-8">
-                                    <input name="nama_fasilitas" value="{{ $fasilitas->nama_fasilitas }}" type="text" class="form-control">
+                                    <input required name="nama_fasilitas" value="{{ $fasilitas->nama_fasilitas }}" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>

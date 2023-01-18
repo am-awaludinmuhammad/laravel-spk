@@ -22,18 +22,6 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">Kategori</label>
-                            
-                                        <div class="col-sm-8">
-                                            <select name="kd_kategori" required class="form-control">
-                                                <option value="" selected disabled>Pilih Kategori</option>
-                                                @foreach ($listKategori as $kategori)
-                                                    <option {{$kategori->kd_kategori == $menuWarung->kd_kategori ? 'selected' : ''}} value="{{$kategori->kd_kategori}}">{{$kategori->nama_kategori}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
                                         <label class="col-sm-4 control-label">Menu</label>
                             
                                         <div class="col-sm-8">
@@ -41,6 +29,18 @@
                                                 <option value="" selected disabled>Pilih Menu</option>
                                                 @foreach ($listMenu as $menu)
                                                     <option {{$menu->kd_menu == $menuWarung->kd_menu ? 'selected' : ''}} value="{{$menu->kd_menu}}">{{$menu->nama_menu}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">Kategori</label>
+                            
+                                        <div class="col-sm-8">
+                                            <select name="kd_kategori" required class="form-control">
+                                                <option value="" selected disabled>Pilih Kategori</option>
+                                                @foreach ($listKategori as $kategori)
+                                                    <option {{$kategori->kd_kategori == $menuWarung->kd_kategori ? 'selected' : ''}} value="{{$kategori->kd_kategori}}">{{$kategori->nama_kategori}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

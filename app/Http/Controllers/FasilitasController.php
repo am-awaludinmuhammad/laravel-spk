@@ -20,7 +20,6 @@ class FasilitasController extends Controller
     {
         // insert data ke table fasilitas
         DB::table('fasilitas')->insert([
-            'kd_fasilitas' => $request->kd_fasilitas,
             'nama_fasilitas' => $request->nama_fasilitas
         ]);
 
@@ -41,7 +40,6 @@ class FasilitasController extends Controller
     {
         // update data fasilitas
         DB::table('fasilitas')->where('kd_fasilitas', $kdFasilitas)->update([
-            'kd_fasilitas' => $request->kd_fasilitas,
             'nama_fasilitas' => $request->nama_fasilitas
         ]);
         // alihkan halaman ke halaman fasilitas

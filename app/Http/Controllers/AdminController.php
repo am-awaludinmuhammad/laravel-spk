@@ -65,7 +65,6 @@ class AdminController extends Controller
     {
         // insert data ke table admin
         DB::table('admin')->insert([
-            'kd_admin' => $request->kd_admin,
             'nama_admin' => $request->nama_admin,
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat,
@@ -89,7 +88,6 @@ class AdminController extends Controller
     {
         // update data admin
         DB::table('admin')->where('kd_admin', $kdAdmin)->update([
-            'kd_admin' => $request->kd_admin,
             'nama_admin' => $request->nama_admin,
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat,
