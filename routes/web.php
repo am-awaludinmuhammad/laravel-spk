@@ -8,6 +8,7 @@ use App\Http\Controllers\WarungController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\MenuWarungController;
+use App\Http\Controllers\PengunjungController;
 use App\Http\Controllers\FasilitasWarungController;
 
 /*
@@ -21,9 +22,15 @@ use App\Http\Controllers\FasilitasWarungController;
 |
 */
 
+
 Route::get('/', function () {
-    return redirect('beranda');
+    return redirect('home');
 });
+
+Route::get('home', [PengunjungController::class, 'home']);
+Route::post('hitung', [PengunjungController::class, 'hitung']);
+Route::get('rekomendasi', [PengunjungController::class, 'hasil']);
+Route::get('warung/map/{kd_warung}', [PengunjungController::class, 'map']);
 
 Route::get('login', [AdminController::class, 'formLogin'])->name('login');
 Route::post('login', [AdminController::class, 'login']);
