@@ -18,6 +18,20 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <style>
+        .line-clamp-1 {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body style="background-color: #f8f8f8">
     <section class="content">
@@ -36,8 +50,8 @@
                                 <div class="col-lg-3 col-xs-6">
                                     <div class="small-box bg-aqua">
                                         <div class="inner">
-                                            <h4>{{$warung->nama_warung}}</h4>
-                                            <p>{{$warung->alamat}}</p>
+                                            <h4 class="line-clamp-1">{{$warung->nama_warung}}</h4>
+                                            <p class="line-clamp-3">{{$warung->alamat}}</p>
                                         </div>
                                         <a href="#" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
                                     </div>
