@@ -53,7 +53,7 @@
                                             <h4 class="line-clamp-1">{{$warung->nama_warung}}</h4>
                                             <p class="line-clamp-3">{{$warung->alamat}}</p>
                                         </div>
-                                        <a href="#" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
+                                        <a href="/warung/detail/{{$warung->kd_warung}}" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
                             @endforeach

@@ -31,6 +31,7 @@ Route::get('home', [PengunjungController::class, 'home']);
 Route::post('hitung', [PengunjungController::class, 'hitung']);
 Route::get('rekomendasi', [PengunjungController::class, 'hasil']);
 Route::get('warung/map/{kd_warung}', [PengunjungController::class, 'map']);
+Route::get('warung/detail/{kd_warung}', [PengunjungController::class, 'detailWarung']);
 
 Route::get('login', [AdminController::class, 'formLogin'])->name('login');
 Route::post('login', [AdminController::class, 'login']);

@@ -179,4 +179,10 @@ class PengunjungController extends Controller
         $warung = DB::table('warung_bakso')->where('kd_warung', $kdWarung)->first();
         return view('guest.map', compact('warung'));
     }
+
+    public function detailWarung($kdWarung)
+    {
+        $warung = DB::table('warung_bakso')->where('kd_warung', $kdWarung)->first();
+        return view('guest.detail-warung', compact('warung'));
+    }
 }
